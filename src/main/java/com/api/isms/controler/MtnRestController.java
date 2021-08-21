@@ -5,13 +5,8 @@
  */
 package com.api.isms.controler;
 
+
 import com.api.isms.entities.PojoSms;
-import com.api.isms.org.csapi.schema.parlayx.common.v2_1.ChargingInformation;
-import com.api.isms.org.csapi.schema.parlayx.common.v2_1.NamedParameterList;
-import com.api.isms.org.csapi.schema.parlayx.common.v2_1.PolicyException;
-import com.api.isms.org.csapi.schema.parlayx.common.v2_1.ServiceException;
-import com.api.isms.org.csapi.schema.parlayx.common.v2_1.SimpleReference;
-import com.api.isms.org.csapi.wsdl.parlayx.sms.send.v2_2.service.SendSmsService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,20 +29,34 @@ public class MtnRestController {
     public String sendSmsApi(@RequestBody PojoSms pojoSms) {
         String reponse = "truuu";
         System.out.println(pojoSms.getSenderName());
-        NamedParameterList namedParameterList = new NamedParameterList();
-        SimpleReference simpleReference = new SimpleReference();
-        simpleReference.setCorrelator("00001");
-        simpleReference.setEndpoint("http://41.206.4.162:8310/notify");
-        ChargingInformation chargingInformation = new ChargingInformation();
-
-        simpleReference.setInterfaceName("SmsNotification");
+//        NamedParameterList namedParameterList = new NamedParameterList();
+//        SimpleReference simpleReference = new SimpleReference();
+//        simpleReference.setCorrelator("00001");
+//        simpleReference.setEndpoint("http://41.206.4.162:8310/notify");
+//        ChargingInformation chargingInformation = new ChargingInformation();
+//        SendSms sendSms=new SendSms();
+//        SendSmsService sendSmsService=new SendSmsService();
+//        SendSmsResponse response=new SendSmsResponse();
+//        RequestSOAPHeader requestSOAPHeader=new RequestSOAPHeader();
+      //  simpleReference.setInterfaceName("SmsNotification");
         try {
+//            requestSOAPHeader.setBundleID("237011280");
+//            requestSOAPHeader.setOA("237675440124");
+//            requestSOAPHeader.setFA("237675440124");
+//            requestSOAPHeader.setSpId("2370110013161");
+//            requestSOAPHeader.setSpPassword("C1353E6F9301AED11B4700BCAD0F46BD");
+//            requestSOAPHeader.setTimeStamp("20100731064245");
+//            sendSms.setMessage(pojoSms.getMessage());
+//            sendSms.setSenderName(pojoSms.getSenderName());
+//            sendSms.setAddresses(pojoSms.getAddresses());
+//            sendSms.setReceiptRequest(simpleReference);
+//          
             
-            SendSmsService service = new SendSmsService();
-           reponse= service.getSendSms().sendSms(pojoSms.getAddresses(), pojoSms.getSenderName(), chargingInformation, pojoSms.getMessage(), simpleReference, "0", 8080, 8310, 788, 4525, namedParameterList);
+             //sendSms.sendSms(pojoSms.getAddresses(), pojoSms.getSenderName(), chargingInformation, pojoSms.getMessage(), simpleReference, "0", 8080, 8310, 788, 4525, namedParameterList);
+//            SendSmsService service = new SendSmsService();
+//            sendSms = service.getSendSms();
 
             System.out.println(pojoSms.getAddresses());
-            //reponse = sendSms.sendSms(pojoSms.getAddresses(), pojoSms.getSenderName(), chargingInformation, pojoSms.getMessage(), simpleReference, "0", 8080, 8310, 788, 4525, namedParameterList);
 
             return reponse;
         } catch (Exception e) {
