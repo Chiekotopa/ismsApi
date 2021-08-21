@@ -344,4 +344,8 @@ public class SendSms {
         this.extensionInfo = value;
     }
 
+    public void setAddresses(List<String> addresses) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
