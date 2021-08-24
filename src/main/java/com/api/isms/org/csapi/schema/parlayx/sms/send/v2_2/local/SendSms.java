@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 import com.api.isms.org.csapi.schema.parlayx.common.v2_1.ChargingInformation;
 import com.api.isms.org.csapi.schema.parlayx.common.v2_1.NamedParameterList;
 import com.api.isms.org.csapi.schema.parlayx.common.v2_1.SimpleReference;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 /**
@@ -56,6 +57,7 @@ import com.api.isms.org.csapi.schema.parlayx.common.v2_1.SimpleReference;
     "dataCoding",
     "extensionInfo"
 })
+@XmlRootElement
 public class SendSms {
 
     @XmlElement(required = true)
@@ -345,7 +347,7 @@ public class SendSms {
     }
 
     public void setAddresses(List<String> addresses) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.addresses=addresses;
     }
 
 }
